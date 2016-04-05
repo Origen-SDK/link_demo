@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4/index.xsd">
+  <spirit:vendor>Origen</spirit:vendor>
+  <spirit:library>Origen</spirit:library>
+  <spirit:name>DA_IP_ADC_3v16bSAR_NN_C90LP</spirit:name>
+  <spirit:version>1.7</spirit:version>
+  <spirit:memoryMaps>
+    <spirit:memoryMap>
+      <spirit:name/>
+      <spirit:addressBlock>
+        <spirit:name/>
+        <spirit:baseAddress>0x0</spirit:baseAddress>
+        <spirit:range>124</spirit:range>
+        <spirit:width>32</spirit:width>
+        <spirit:register>
+          <spirit:name>sc1</spirit:name>
+          <spirit:description>ADC Status and Control Registers 1</spirit:description>
+          <spirit:addressOffset>0x0</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x1F</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>coco</spirit:name>
+            <spirit:description>Conversion Complete Flag</spirit:description>
+            <spirit:bitOffset>7</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>ro</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Conversion is not completed.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>Conversion is completed.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>aien</spirit:name>
+            <spirit:description>Interrupt Enable</spirit:description>
+            <spirit:bitOffset>6</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Conversion complete interrupt is disabled.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>Conversion complete interrupt is enabled.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>diff</spirit:name>
+            <spirit:description>Differential Mode Enable</spirit:description>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Single-ended conversions and input channels are selected.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>Differential conversions and input channels are selected.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adch</spirit:name>
+            <spirit:description>Input channel select</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>5</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>When DIFF=0, DADP0 is selected as input; when DIFF=1, DAD0 is selected as input. AD0 is selected as input.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>When DIFF=0, DADP1 is selected as input; when DIFF=1, DAD1 is selected as input. AD1 is selected as input.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0xA</spirit:value>
+              <spirit:name>val_0xA</spirit:name>
+              <spirit:description>When DIFF=0, DADP2 is selected as input; when DIFF=1, DAD2 is selected as input. AD2 is selected as input.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0xB</spirit:value>
+              <spirit:name>val_0xB</spirit:name>
+              <spirit:description>When DIFF=0, DADP3 is selected as input; when DIFF=1, DAD3 is selected as input. AD3 is selected as input.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x64</spirit:value>
+              <spirit:name>val_0x64</spirit:name>
+              <spirit:description>When DIFF=0, AD4 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x65</spirit:value>
+              <spirit:name>val_0x65</spirit:name>
+              <spirit:description>When DIFF=0, AD5 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x6E</spirit:value>
+              <spirit:name>val_0x6E</spirit:name>
+              <spirit:description>When DIFF=0, AD6 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x6F</spirit:value>
+              <spirit:name>val_0x6F</spirit:name>
+              <spirit:description>When DIFF=0, AD7 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x3E8</spirit:value>
+              <spirit:name>val_0x3E8</spirit:name>
+              <spirit:description>When DIFF=0, AD8 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x3E9</spirit:value>
+              <spirit:name>val_0x3E9</spirit:name>
+              <spirit:description>When DIFF=0, AD9 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x3F2</spirit:value>
+              <spirit:name>val_0x3F2</spirit:name>
+              <spirit:description>When DIFF=0, AD10 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x3F3</spirit:value>
+              <spirit:name>val_0x3F3</spirit:name>
+              <spirit:description>When DIFF=0, AD11 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x44C</spirit:value>
+              <spirit:name>val_0x44C</spirit:name>
+              <spirit:description>When DIFF=0, AD12 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x44D</spirit:value>
+              <spirit:name>val_0x44D</spirit:name>
+              <spirit:description>When DIFF=0, AD13 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x456</spirit:value>
+              <spirit:name>val_0x456</spirit:name>
+              <spirit:description>When DIFF=0, AD14 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x457</spirit:value>
+              <spirit:name>val_0x457</spirit:name>
+              <spirit:description>When DIFF=0, AD15 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x2710</spirit:value>
+              <spirit:name>val_0x2710</spirit:name>
+              <spirit:description>When DIFF=0, AD16 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x2711</spirit:value>
+              <spirit:name>val_0x2711</spirit:name>
+              <spirit:description>When DIFF=0, AD17 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x271A</spirit:value>
+              <spirit:name>val_0x271A</spirit:name>
+              <spirit:description>When DIFF=0, AD18 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x271B</spirit:value>
+              <spirit:name>val_0x271B</spirit:name>
+              <spirit:description>When DIFF=0, AD19 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x2774</spirit:value>
+              <spirit:name>val_0x2774</spirit:name>
+              <spirit:description>When DIFF=0, AD20 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x2775</spirit:value>
+              <spirit:name>val_0x2775</spirit:name>
+              <spirit:description>When DIFF=0, AD21 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x277E</spirit:value>
+              <spirit:name>val_0x277E</spirit:name>
+              <spirit:description>When DIFF=0, AD22 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x277F</spirit:value>
+              <spirit:name>val_0x277F</spirit:name>
+              <spirit:description>When DIFF=0, AD23 is selected as input; when DIFF=1, it is reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x2AF8</spirit:value>
+              <spirit:name>val_0x2AF8</spirit:name>
+              <spirit:description>Reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x2AF9</spirit:value>
+              <spirit:name>val_0x2AF9</spirit:name>
+              <spirit:description>Reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x2B02</spirit:value>
+              <spirit:name>val_0x2B02</spirit:name>
+              <spirit:description>When DIFF=0, Temp Sensor (single-ended) is selected as input; when DIFF=1, Temp Sensor (differential) is selected as input.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x2B03</spirit:value>
+              <spirit:name>val_0x2B03</spirit:name>
+              <spirit:description>When DIFF=0, Bandgap VREF\_OUT (single-ended) is selected as input; when DIFF=1, Bandgap VREF\_OUT (differential) is selected as input.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x2B5C</spirit:value>
+              <spirit:name>val_0x2B5C</spirit:name>
+              <spirit:description>Reserved.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x2B5D</spirit:value>
+              <spirit:name>val_0x2B5D</spirit:name>
+              <spirit:description>When DIFF=0,VREFSH is selected as input; when DIFF=1, -VREFSH (differential) is selected as input. Voltage reference selected is determined by SC2\[REFSEL\].</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x2B66</spirit:value>
+              <spirit:name>val_0x2B66</spirit:name>
+              <spirit:description>When DIFF=0,VREFSL is selected as input; when DIFF=1, it is reserved. Voltage reference selected is determined by SC2\[REFSEL\].</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x2B67</spirit:value>
+              <spirit:name>val_0x2B67</spirit:name>
+              <spirit:description>Module is disabled.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>cfg1</spirit:name>
+          <spirit:description>ADC Configuration Register 1</spirit:description>
+          <spirit:addressOffset>0x8</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x0</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>adlpc</spirit:name>
+            <spirit:description>Low-Power Configuration</spirit:description>
+            <spirit:bitOffset>7</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Normal power configuration.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>Low-power configuration. The power is reduced at the expense of maximum clock speed.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adiv</spirit:name>
+            <spirit:description>Clock Divide Select</spirit:description>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>2</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>The divide ratio is 1 and the clock rate is input clock.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>The divide ratio is 2 and the clock rate is (input clock)/2.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0xA</spirit:value>
+              <spirit:name>val_0xA</spirit:name>
+              <spirit:description>The divide ratio is 4 and the clock rate is (input clock)/4.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0xB</spirit:value>
+              <spirit:name>val_0xB</spirit:name>
+              <spirit:description>The divide ratio is 8 and the clock rate is (input clock)/8.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adlsmp</spirit:name>
+            <spirit:description>Sample Time Configuration</spirit:description>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Short sample time.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>Long sample time.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>mode</spirit:name>
+            <spirit:description>Conversion mode selection</spirit:description>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>2</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>When DIFF=0:It is single-ended 8-bit conversion; when DIFF=1, it is differential 9-bit conversion with 2\'s complement output.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>When DIFF=0:It is single-ended 12-bit conversion ; when DIFF=1, it is differential 13-bit conversion with 2\'s complement output.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0xA</spirit:value>
+              <spirit:name>val_0xA</spirit:name>
+              <spirit:description>When DIFF=0:It is single-ended 10-bit conversion. ; when DIFF=1, it is differential 11-bit conversion with 2\'s complement output</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0xB</spirit:value>
+              <spirit:name>val_0xB</spirit:name>
+              <spirit:description>When DIFF=0:It is single-ended 16-bit conversion..; when DIFF=1, it is differential 16-bit conversion with 2\'s complement output Reserved. Do not set the field to this value.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adiclk</spirit:name>
+            <spirit:description>Input Clock Select</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>2</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Bus clock</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>Alternate clock 2 (ALTCLK2) Bus clock divided by 2(BUSCLK/2)</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0xA</spirit:value>
+              <spirit:name>val_0xA</spirit:name>
+              <spirit:description>Alternate clock (ALTCLK)</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0xB</spirit:value>
+              <spirit:name>val_0xB</spirit:name>
+              <spirit:description>Asynchronous clock (ADACK)</spirit:description>
+            </spirit:values>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>cfg2</spirit:name>
+          <spirit:description>ADC Configuration Register 2</spirit:description>
+          <spirit:addressOffset>0xC</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x0</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>muxsel</spirit:name>
+            <spirit:description>ADC Mux Select</spirit:description>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>ADxxa channels are selected.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>ADxxb channels are selected.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adacken</spirit:name>
+            <spirit:description>Asynchronous Clock Output
+						Enable</spirit:description>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Asynchronous clock output disabled; Asynchronous clock is enabled only if selected by ADICLK and a conversion is active.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>Asynchronous clock and clock output is enabled regardless of the state of the ADC.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adhsc</spirit:name>
+            <spirit:description>High-Speed Configuration</spirit:description>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Normal conversion sequence selected.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>High-speed conversion sequence selected with 2 additional ADCK cycles to total conversion time.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adlsts</spirit:name>
+            <spirit:description>Long Sample Time Select</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>2</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Default longest sample time; 20 extra ADCK cycles; 24 ADCK cycles total.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>12 extra ADCK cycles; 16 ADCK cycles total sample time.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0xA</spirit:value>
+              <spirit:name>val_0xA</spirit:name>
+              <spirit:description>6 extra ADCK cycles; 10 ADCK cycles total sample time.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0xB</spirit:value>
+              <spirit:name>val_0xB</spirit:name>
+              <spirit:description>2 extra ADCK cycles; 6 ADCK cycles total sample time.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>r</spirit:name>
+          <spirit:description>ADC Data Result Register</spirit:description>
+          <spirit:addressOffset>0x10</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-only</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x0</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>d</spirit:name>
+            <spirit:description>Data result</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>16</spirit:bitWidth>
+            <spirit:access>ro</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>cv</spirit:name>
+          <spirit:description>Compare Value Registers</spirit:description>
+          <spirit:addressOffset>0x18</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x0</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>cv</spirit:name>
+            <spirit:description>Compare Value.</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>16</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>sc2</spirit:name>
+          <spirit:description>Status and Control Register 2</spirit:description>
+          <spirit:addressOffset>0x20</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x0</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>adact</spirit:name>
+            <spirit:description>Conversion Active</spirit:description>
+            <spirit:bitOffset>7</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>ro</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Conversion not in progress.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>Conversion in progress.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adtrg</spirit:name>
+            <spirit:description>Conversion Trigger Select</spirit:description>
+            <spirit:bitOffset>6</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Software trigger selected.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>Hardware trigger selected.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>acfe</spirit:name>
+            <spirit:description>Compare Function Enable</spirit:description>
+            <spirit:bitOffset>5</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Compare function disabled.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>Compare function enabled.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>acfgt</spirit:name>
+            <spirit:description>Compare Function Greater Than
+						Enable</spirit:description>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Configures less than threshold, outside range not inclusive and inside range not inclusive; functionality based on the values placed in CV1 and CV2.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>Configures greater than or equal to threshold, outside and inside ranges inclusive; functionality based on the values placed in CV1 and CV2.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>acren</spirit:name>
+            <spirit:description>Compare Function Range
+						Enable</spirit:description>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Range function disabled. Only CV1 is compared. \{27}</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>Range function enabled. Both CV1 and CV2 are compared. \{27}</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>dmaen</spirit:name>
+            <spirit:description>DMA Enable</spirit:description>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>DMA is disabled.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>DMA is enabled and will assert the ADC DMA request during an ADC conversion complete event noted when any of the SC1n\[COCO\] flags is asserted.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>refsel</spirit:name>
+            <spirit:description>Voltage Reference Selection</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>2</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Default voltage reference pin pair, that is, external pins VREFH and VREFL</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>Alternate reference pair, that is, VALTH and VALTL . This pair may be additional external pins or internal sources depending on the MCU configuration. See the chip configuration information for details specific to this MCU</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0xA</spirit:value>
+              <spirit:name>val_0xA</spirit:name>
+              <spirit:description>Internal bandgap reference and associated ground reference (V BGH and V BGL ). Consult the Chip Configuration information for details specific to this MCU. Reserved</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0xB</spirit:value>
+              <spirit:name>val_0xB</spirit:name>
+              <spirit:description>Reserved - Selects default voltage reference (V REFH and V REFL ) pin pair.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>sc3</spirit:name>
+          <spirit:description>Status and Control Register 3</spirit:description>
+          <spirit:addressOffset>0x24</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x0</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>cal</spirit:name>
+            <spirit:description>Calibration</spirit:description>
+            <spirit:bitOffset>7</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>calf</spirit:name>
+            <spirit:description>Calibration Failed Flag</spirit:description>
+            <spirit:bitOffset>6</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Calibration completed normally.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>Calibration failed. ADC accuracy specifications are not guaranteed.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>assitrgen</spirit:name>
+            <spirit:description>Assist Trigger Enable</spirit:description>
+            <spirit:bitOffset>4</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Writes to ADCSC1 COCO bit don\'t have an affect on ADTRG.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>Writes to ADCSC1 COCO bit will be reflected into ADTRG register. Note: When ASSITRGEN is set, writes to ADCSC1 are delayed by 1/2 bus cycle to allow ADCSC1 COCO write to be updated in ADTRG register so conversion type can be correctly generated (software if coco write is 1\'b0 causing ADTRG to clear or hardware type if coco write is 1\'b1.). Note: User must ensure no hardware trigger is generated between the time ADCSC1 COCO bit is written if value of ADTRG will change to guarantee correct conversion type is generated.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>adco</spirit:name>
+            <spirit:description>Continuous Conversion
+						Enable</spirit:description>
+            <spirit:bitOffset>3</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>One conversion or one set of conversions if the hardware average function is enabled, that is, AVGE=1, after initiating a conversion.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>Continuous conversions or sets of conversions if the hardware average function is enabled, that is, AVGE=1, after initiating a conversion.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>avge</spirit:name>
+            <spirit:description>Hardware Average Enable</spirit:description>
+            <spirit:bitOffset>2</spirit:bitOffset>
+            <spirit:bitWidth>1</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>Hardware average function disabled.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>Hardware average function enabled.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+          <spirit:field>
+            <spirit:name>avgs</spirit:name>
+            <spirit:description>Hardware Average Select</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>2</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+            <spirit:values>
+              <spirit:value>0x0</spirit:value>
+              <spirit:name>val_0x0</spirit:name>
+              <spirit:description>4 samples averaged.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0x1</spirit:value>
+              <spirit:name>val_0x1</spirit:name>
+              <spirit:description>8 samples averaged.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0xA</spirit:value>
+              <spirit:name>val_0xA</spirit:name>
+              <spirit:description>16 samples averaged.</spirit:description>
+            </spirit:values>
+            <spirit:values>
+              <spirit:value>0xB</spirit:value>
+              <spirit:name>val_0xB</spirit:name>
+              <spirit:description>32 samples averaged.</spirit:description>
+            </spirit:values>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>ofs</spirit:name>
+          <spirit:description>ADC Offset Correction Register</spirit:description>
+          <spirit:addressOffset>0x28</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x4</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>ofs</spirit:name>
+            <spirit:description>Offset Error Correction
+						Value</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>16</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>pg</spirit:name>
+          <spirit:description>ADC Plus-Side Gain Register</spirit:description>
+          <spirit:addressOffset>0x2C</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x8200</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>pg</spirit:name>
+            <spirit:description>Plus-Side Gain</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>16</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>mg</spirit:name>
+          <spirit:description>ADC Minus-Side Gain Register</spirit:description>
+          <spirit:addressOffset>0x30</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x8200</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>mg</spirit:name>
+            <spirit:description>Minus-Side Gain</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>16</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>clpd</spirit:name>
+          <spirit:description>ADC Plus-Side General Calibration Value 						Register</spirit:description>
+          <spirit:addressOffset>0x34</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0xA</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>clpd</spirit:name>
+            <spirit:description>Calibration Value</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>6</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>clps</spirit:name>
+          <spirit:description>ADC Plus-Side General Calibration Value 						Register</spirit:description>
+          <spirit:addressOffset>0x38</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x20</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>clps</spirit:name>
+            <spirit:description>Calibration Value</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>6</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>clp4</spirit:name>
+          <spirit:description>ADC Plus-Side General Calibration Value 						Register</spirit:description>
+          <spirit:addressOffset>0x3C</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x200</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>clp4</spirit:name>
+            <spirit:description>Calibration Value</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>10</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>clp3</spirit:name>
+          <spirit:description>ADC Plus-Side General Calibration Value 						Register</spirit:description>
+          <spirit:addressOffset>0x40</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x100</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>clp3</spirit:name>
+            <spirit:description>Calibration Value</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>9</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>clp2</spirit:name>
+          <spirit:description>ADC Plus-Side General Calibration Value 						Register</spirit:description>
+          <spirit:addressOffset>0x44</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x80</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>clp2</spirit:name>
+            <spirit:description>Calibration Value</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>8</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>clp1</spirit:name>
+          <spirit:description>ADC Plus-Side General Calibration Value 						Register</spirit:description>
+          <spirit:addressOffset>0x48</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x40</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>clp1</spirit:name>
+            <spirit:description>Calibration Value</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>7</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>clp0</spirit:name>
+          <spirit:description>ADC Plus-Side General Calibration Value 						Register</spirit:description>
+          <spirit:addressOffset>0x4C</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x20</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>clp0</spirit:name>
+            <spirit:description>Calibration Value</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>6</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>clmd</spirit:name>
+          <spirit:description>ADC Minus-Side General Calibration Value 						Register</spirit:description>
+          <spirit:addressOffset>0x54</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0xA</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>clmd</spirit:name>
+            <spirit:description>Calibration Value</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>6</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>clms</spirit:name>
+          <spirit:description>ADC Minus-Side General Calibration Value 						Register</spirit:description>
+          <spirit:addressOffset>0x58</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x20</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>clms</spirit:name>
+            <spirit:description>Calibration Value</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>6</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>clm4</spirit:name>
+          <spirit:description>ADC Minus-Side General Calibration Value 						Register</spirit:description>
+          <spirit:addressOffset>0x5C</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x200</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>clm4</spirit:name>
+            <spirit:description>Calibration Value</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>10</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>clm3</spirit:name>
+          <spirit:description>ADC Minus-Side General Calibration Value 						Register</spirit:description>
+          <spirit:addressOffset>0x60</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x100</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>clm3</spirit:name>
+            <spirit:description>Calibration Value</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>9</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>clm2</spirit:name>
+          <spirit:description>ADC Minus-Side General Calibration Value 						Register</spirit:description>
+          <spirit:addressOffset>0x64</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x80</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>clm2</spirit:name>
+            <spirit:description>Calibration Value</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>8</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>clm1</spirit:name>
+          <spirit:description>ADC Minus-Side General Calibration Value 						Register</spirit:description>
+          <spirit:addressOffset>0x68</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x40</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>clm1</spirit:name>
+            <spirit:description>Calibration Value</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>7</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+        <spirit:register>
+          <spirit:name>clm0</spirit:name>
+          <spirit:description>ADC Minus-Side General Calibration Value 						Register</spirit:description>
+          <spirit:addressOffset>0x6C</spirit:addressOffset>
+          <spirit:size>32</spirit:size>
+          <spirit:access>read-write</spirit:access>
+          <spirit:reset>
+            <spirit:value>0x20</spirit:value>
+            <spirit:mask>0xFFFFFFFF</spirit:mask>
+          </spirit:reset>
+          <spirit:field>
+            <spirit:name>clm0</spirit:name>
+            <spirit:description>Calibration Value</spirit:description>
+            <spirit:bitOffset>0</spirit:bitOffset>
+            <spirit:bitWidth>6</spirit:bitWidth>
+            <spirit:access>rw</spirit:access>
+          </spirit:field>
+        </spirit:register>
+      </spirit:addressBlock>
+    </spirit:memoryMap>
+  </spirit:memoryMaps>
+</spirit:component>
+
