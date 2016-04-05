@@ -44,7 +44,7 @@ module LinkDemo
       if tester.link?
         shutdown
         # TODO: This should be automated
-        tester.flush_vector
+        tester.synchronize
       end
     end
 
