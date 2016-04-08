@@ -7,6 +7,9 @@ module LinkDemo
       instantiate_pins(options)
       instantiate_sub_blocks(options)
       instantiate_registers(options)
+      add_reg :scgc6, 0x4004_803C, 32 do
+        bits 31..0, :value
+      end
     end
 
     def instantiate_pins(options = {})
@@ -26,7 +29,7 @@ module LinkDemo
       sub_block :arm_debug, class_name: 'OrigenARMDebug::Driver', aps: { mem_ap: 0x00000000, mdmap: 0x01000000 }
 
       sub_block :flash, class_name: 'Flash', base_address: 0x4002_0000
-      sub_block :adc, class_name: 'ADC', base_address: 0x4002_7000
+      sub_block :adc, class_name: 'ADC', base_address: 0x4003_B000
 
       sub_block :portb, class_name: 'Port', base_address: 0x4004_A000
       sub_block :portc, class_name: 'Port', base_address: 0x4004_B000
