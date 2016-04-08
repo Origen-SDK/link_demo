@@ -15,8 +15,8 @@ class LinkDemoApplication < Origen::Application
 
   # To enable deployment of your documentation to a web server (via the 'origen web'
   # command) fill in these attributes.
-  #config.web_directory = "/path/to/server/link_demo"
-  #config.web_domain = "http://origen.mycompany.net/link_demo"
+  config.web_directory = "git@github.com:Origen-SDK/Origen-SDK.github.io.git/link_demo"
+  config.web_domain = "http://origen-sdk.org/link_demo"
 
   # When false Origen will be less strict about checking for some common coding errors,
   # it is recommended that you leave this to true for better feedback and easier debug.
@@ -36,6 +36,24 @@ class LinkDemoApplication < Origen::Application
   }
 
   config.semantically_version = true
+
+  def after_web_site_compile(options)
+    # Build the model documentation
+    OrigenDocHelpers.generate_model_docs layout: "#{Origen.root}/templates/web/layouts/_basic.html.erb", tab: :model do |d|
+      d.page model: $dut
+    end
+
+    # Build the test program flow documentation
+    # First build the program to create a flow mode
+    Origen.environment.temporary = "j750"
+    Origen.app.runner.launch action: :program, files: "program"
+    # Then the documentation
+    OrigenDocHelpers.generate_flow_docs layout: "#{Origen.root}/templates/web/layouts/_basic.html.erb", tab: :flows  do |d|
+      d.page flow: :probe1,
+             name: "Probe 1 Flow",
+             target: "default.rb"
+    end
+  end
 
   # An example of how to set application specific LSF parameters
   #config.lsf.project = "msg.te"
