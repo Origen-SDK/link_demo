@@ -11,6 +11,8 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
+        <li class="<%= options[:tab] == :model ? 'active' : '' %>"><a href="<%= path "/models/linkdemo_toplevel" %>">Model</a></li>
+        <li class="<%= options[:tab] == :flows ? 'active' : '' %>"><a href="<%= path "/flows" %>">Flows</a></li>
         <li class="<%= options[:tab] == :api ? 'active' : '' %>"><a href="<%= path "/api/" %>">API</a></li>
         <li class="<%= options[:tab] == :release ? 'active' : '' %>"><a href="<%= path "/release_notes" %>">Release Notes</a></li>
       </ul>
