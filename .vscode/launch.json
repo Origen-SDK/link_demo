@@ -7,7 +7,8 @@
 			"request": "launch",
             "cwd": "${workspaceRoot}",
             "program": "${workspaceRoot}/lbin/origen",
-            "args": ["g", "communication_test"]
+            //"args": ["g", "communication_test"]
+			"args": ["g", "adc_test"]
 		},
 		{
 			"name": "Listen for rdebug-ide",
