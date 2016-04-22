@@ -37,8 +37,8 @@ module LinkDemo
       sub_block :gpiod, class_name: 'GPIO', base_address: 0x400F_F0C0
     end
 
+    # Any top-level registers should be defined here
     def instantiate_registers(options = {})
-      # Any top-level registers should be defined here
       add_reg :scgc6, 0x4004_803C
     end
   end
