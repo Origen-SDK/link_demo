@@ -53,7 +53,7 @@ module LinkDemo
       end
 
       def apply_levels(test, options)
-        test.dc_category = "spec"
+        test.dc_category = 'spec'
         test.dc_selector = options[:vdd] || :nom
       end
 
@@ -64,7 +64,6 @@ module LinkDemo
         }.merge(options)
         flow.test test, options
       end
-
     end
   end
 end

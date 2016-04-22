@@ -7,9 +7,6 @@ module LinkDemo
       instantiate_pins(options)
       instantiate_sub_blocks(options)
       instantiate_registers(options)
-      add_reg :scgc6, 0x4004_803C, 32 do
-        bits 31..0, :value
-      end
     end
 
     def instantiate_pins(options = {})
@@ -42,6 +39,7 @@ module LinkDemo
 
     def instantiate_registers(options = {})
       # Any top-level registers should be defined here
+      add_reg :scgc6, 0x4004_803C
     end
   end
 end
