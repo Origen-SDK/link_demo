@@ -1,8 +1,6 @@
 module LinkDemo
   class TopLevelController
     include Origen::Controller
-    include OrigenJTAG
-    include OrigenARMDebug
 
     MDMAP_STAT = 0x01000000
     MDMAP_CTRL = 0x01000004
@@ -17,14 +15,14 @@ module LinkDemo
       ss 'Reset the device and hold off core execution'
       tester.set_timeset('func_25mhz', 40)   # Where 40 is the period in ns
       pin(:resetb).drive!(0)
-      arm_debug.abs_if.read_dp(:idcode, 0x4ba00477)      # Dummy read
-      arm_debug.abs_if.write_dp(:ctrl_stat, 0x50000000)  # Power-up Debugger & System
-      arm_debug.abs_if.read_dp(:ctrl_stat, 0xf0000000)   # Power-up Debugger & System (verify)
-      arm_debug.abs_if.read_ap(MDMAP_STAT, 0x00000032)   # Wait for flash, system, and security to stabilize
-      arm_debug.abs_if.write_ap(MDMAP_CTRL, 0x00000010)  # Assert debugger reset to CPU
-      arm_debug.abs_if.read_ap(MDMAP_CTRL, 0x00000010)   # Assert debugger reset to CPU
+      arm_debug.jtag_dp.idcode.read!(0x4ba00477)      # Dummy read
+      arm_debug.jtag_dp.ctrl_stat.write!(0x50000000)  # Power-up Debugger & System
+      arm_debug.jtag_dp.ctrl_stat.write!(0xf0000000)   # Power-up Debugger & System (verify)
+      arm_debug.mdmap.read_register(0x00000032, address: 0)   # Wait for flash, system, and security to stabilize
+      arm_debug.mdmap.write_register(0x00000010, address: 0x4)  # Assert debugger reset to CPU
+      arm_debug.mdmap.read_register(0x00000010, address: 0x4)  # Assert debugger reset to CPU
       pin(:resetb).dont_care!
-      arm_debug.abs_if.read_ap(MDMAP_STAT, 0x0000003a)   # Wait for flash, system, and security to stabilize
+      arm_debug.mdmap.read_register(0x0000003A, address: 0)   # Wait for flash, system, and security to stabilize
       dut.mem(0x4004_8038).write!(0xFFFF_FFFF)           # Turn off all clock gating
     end
 
@@ -49,11 +47,11 @@ module LinkDemo
     end
 
     def write_register(reg, options = {})
-      arm_debug.write_register(reg, options)
+      arm_debug.mem_ap.write_register(reg, options)
     end
 
     def read_register(reg, options = {})
-      arm_debug.read_register(reg, options)
+      arm_debug.mem_ap.read_register(reg, options)
     end
 
     def read_portb_3_0(value)

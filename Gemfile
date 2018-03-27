@@ -17,7 +17,7 @@ gem "origen_swd"
 gem 'cross_origen'
 
 # For command line debugging
-gem 'byebug'
+gem 'byebug', "~>9"
 # For visual debugging with VSCode
 #gem 'ruby-debug-ide'
 #gem 'debase'

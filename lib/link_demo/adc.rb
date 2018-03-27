@@ -4,7 +4,7 @@ module LinkDemo
     include CrossOrigen
 
     def initialize
-      cr_import(path: "#{Origen.root}/ipxact/adc.xml")
+      cr_import(path: "#{Origen.root}/ipxact/adc_regs.xml")
     end
   end
 end

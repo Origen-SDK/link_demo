@@ -2,6 +2,8 @@ module LinkDemo
   class TopLevel
     include Origen::TopLevel
     include CrossOrigen
+    include OrigenJTAG
+    include OrigenARMDebug
 
     def initialize(options = {})
       instantiate_pins(options)
@@ -23,7 +25,7 @@ module LinkDemo
     end
 
     def instantiate_sub_blocks(options = {})
-      sub_block :arm_debug, class_name: 'OrigenARMDebug::Driver', aps: { mem_ap: 0x00000000, mdmap: 0x01000000 }
+      sub_block :arm_debug, class_name: 'OrigenARMDebug::DAP', mem_aps: { mem_ap: 0x00000000, mdmap: 0x01000000 }
 
       sub_block :flash, class_name: 'Flash', base_address: 0x4002_0000
       sub_block :adc, class_name: 'ADC', base_address: 0x4003_B000

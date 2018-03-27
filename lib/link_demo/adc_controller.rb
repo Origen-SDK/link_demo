@@ -21,16 +21,16 @@ module LinkDemo
       # Ensure some settling time. Default value from initialization or whatever was passed into the options.
       tester.cycle(repeat: opts[:settling_time])
 
-      ss "Enable the ADC clock" # this should really be an API call to the top-level
+      ss 'Enable the ADC clock' # this should really be an API call to the top-level
       dut.scgc6.write!(0x4800_0001)
 
-      ss "Setup the ADC to do 16 averages in hardware"
+      ss 'Setup the ADC to do 16 averages in hardware'
       sc3.avge.write(0x1) # enable hardware averaging
       sc3.avgs.write(0x2) # take 16 averages
       sc3.avgs.write(0x3) # take 32 averages
       sc3.write!
 
-      ss "Setup the configuration register"
+      ss 'Setup the configuration register'
       cfg1.adlpc.write(0x0) # Power Mode
       cfg1.adiv.write(opts[:adc_clock_div]) # Internal ADC Clock Div
       cfg1.adlsmp.write(opts[:long_samples]) # Sample Time (Short Samples = 0, Long Samples = 1)
@@ -48,7 +48,7 @@ module LinkDemo
       # the options.
       tester.cycle(repeat: opts[:conversion_time])
 
-      ss "Check that the conversion has completed"
+      ss 'Check that the conversion has completed'
       sc1.coco.read!(0x1) # Check for COnversion COmplete (COCO)
 
       # Return the register bits containing the result to the caller.
