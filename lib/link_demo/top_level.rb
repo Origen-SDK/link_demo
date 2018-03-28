@@ -12,11 +12,11 @@ module LinkDemo
     end
 
     def instantiate_pins(options = {})
-      add_pin :tclk
-      add_pin :tdi
-      add_pin :tdo
-      add_pin :tms
-      add_pin :resetb
+      add_pin :tclk, meta: { link_io: 25 }
+      add_pin :tdi, meta: { link_io: 14 }
+      add_pin :tdo, meta: { link_io: 15 }
+      add_pin :tms, meta: { link_io: 22 }
+      add_pin :resetb, meta: { link_io: 16 }
       pin_pattern_order :tclk, :tms, :tdi, :tdo, :resetb
       if tester.link?
         # TODO: pin_pattern_order should be enough

@@ -2,9 +2,6 @@ module LinkDemo
   class TopLevelController
     include Origen::Controller
 
-    MDMAP_STAT = 0x01000000
-    MDMAP_CTRL = 0x01000004
-
     # JTAG_CONFIG = {
     #  tclk_format:   :rh,
     #  tclk_multiple: 2
@@ -12,8 +9,9 @@ module LinkDemo
 
     # This is called automatically at the start of generating a pattern
     def startup(options = {})
+      tester.set_timeset(:func_25mhz, 40)   # Where 40 is the period in ns
+
       ss 'Reset the device and hold off core execution'
-      tester.set_timeset('func_25mhz', 40)   # Where 40 is the period in ns
       pin(:resetb).drive!(0)
       arm_debug.jtag_dp.idcode.read!(0x4ba00477)      # Dummy read
       arm_debug.jtag_dp.ctrl_stat.write!(0x50000000)  # Power-up Debugger & System

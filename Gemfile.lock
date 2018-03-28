@@ -106,7 +106,7 @@ GEM
       sinatra (~> 1, >= 1.4.7)
     origen_swd (1.1.0)
       origen (>= 0.7.36)
-    origen_testers (0.16.1)
+    origen_testers (0.17.0)
       atp (~> 1.1)
       origen (>= 0.26.0)
       require_all (~> 1)
